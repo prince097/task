@@ -1,0 +1,15 @@
+version: '1'
+services:
+  elasticsearch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9200:9200
+    volumes:
+      - elasticsearch-data:/var/lib/elasticsearch
+      - elasticsearch-logs:/var/log/elasticsearch
+
+volumes:
+  elasticsearch-data:
+  elasticsearch-logs:
